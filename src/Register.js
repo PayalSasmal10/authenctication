@@ -25,36 +25,49 @@ function Register() {
         setMatchPwd(e.target.value)
     }
 
-    const submitHandler = () => {
-
+    const submitHandler = (e) => {
+      e.preventDefault();
+      console.log("submitted");
+      console.log(user);
+      console.log(pwd);
+      console.log(matchPwd);
+      setUser('');
+      setPwd('');
+      setMatchPwd('');
     };
 
   return (
-    <div >
       <form onSubmit={submitHandler}>
+        <div className='container'>
+        <div className='inner-container'>
+
+        </div>
         <div>
             <span>User Name </span>
             <input type='text' 
             onChange={userInputHandler}
+            value={user}
             />
         </div>
         <div>
             <span>Password </span>
             <input type='password'
             onChange={passwordInputHandler}
+            value={pwd}
             />
         </div>
         <div>
             <span>Confirm Password </span>
             <input type='password'
             onChange={matchInputHandler}
+            value={matchPwd}
             />
         </div>
         <div>
             <button>Submit</button>
         </div>
+        </div>
       </form>
-    </div>
   )
 }
 
