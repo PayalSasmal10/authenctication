@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import "./Register.css";
 
 function Register() {
@@ -13,6 +13,9 @@ function Register() {
     const [matchPwd, setMatchPwd] = useState('');
     const [validMatch, setValidMatch] = useState(false);
     const [matchFocus, setMatchFocus] = useState(false);
+    
+    const userRef = useRef();
+ 
 
     const userInputHandler = (e) => {
         setUser(e.target.value)
@@ -37,16 +40,22 @@ function Register() {
       setMatchPwd('');
     };
 
+    useEffect(()=>{
+      userRef.current.focus();
+    },[]);
+
   return (
         <div className='container'>
       <form onSubmit={submitHandler}>
         <div className='inner-container'>
 
         <div className='inner-inp'>
-            <span>User Name </span>
+            <label>User Name </label>
             <input type='text' 
             onChange={userInputHandler}
             value={user}
+            ref={useRef}
+            required
             />
         </div>
         <div>
