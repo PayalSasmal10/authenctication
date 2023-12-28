@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./Register.css";
 
 function Register() {
     const [user, setUser] = useState('');
@@ -37,12 +38,11 @@ function Register() {
     };
 
   return (
-      <form onSubmit={submitHandler}>
         <div className='container'>
+      <form onSubmit={submitHandler}>
         <div className='inner-container'>
 
-        </div>
-        <div>
+        <div className='inner-inp'>
             <span>User Name </span>
             <input type='text' 
             onChange={userInputHandler}
@@ -68,6 +68,7 @@ function Register() {
         </div>
         </div>
       </form>
+        </div>
   )
 }
 

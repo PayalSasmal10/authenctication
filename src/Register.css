@@ -2,7 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 .inner-container{
-    width: auto;
+    width: 30vw;
+    height: 43vh;
+    border: 1px solid;
+    margin-top: 50px;
+}
+.inner-inp{
+    
 }
